@@ -1,0 +1,118 @@
+.client {
+  background-color: $title-color_1;
+  .client__in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    row-gap: 6rem;
+
+    .client__part {
+      width: 100%;
+      &.client__part.client__part--one {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include bp($point_3) {
+          text-align: center;
+        }
+        .client__title {
+          font-size: 4.5rem;
+          line-height: 5.4rem;
+          color: $white-color;
+          margin-bottom: 1rem;
+        }
+      }
+      &.client__part.client__part--two {
+        display: flex;
+        justify-content: center;
+        .client_list {
+          display: flex;
+          @include bp($point_2, min) {
+            align-items: center;
+            column-gap: 2rem;
+          }
+          @include bp($point_3) {
+            flex-direction: column;
+            row-gap: 3rem ;
+          }
+          .client__item {
+            display: flex;
+            flex-direction: column;
+            max-width: 31rem;
+            row-gap: 2rem;
+
+            .client__info {
+              display: flex;
+              flex-direction: column;
+              row-gap: 3rem;
+              background-color: #2e3947;
+              padding: 4.5rem;
+              @include bp($point_3) {
+                border-radius: 4rem 1px 1px 1px;
+              }
+              @include bp($point_2, min) {
+                &.client__info.client__info--border_1 {
+                  border-radius: 1px 1px 1px 4rem;
+                }
+                &.client__info.client__info--border_2 {
+                  border-radius: 4rem 1px 1px 1px;
+                }
+              }
+              .info__img_w {
+                display: block;
+                object-fit: contain;
+                width: 3.2rem;
+                height: 2.6rem;
+                .info__img {
+                  @extend %contain_image;
+                }
+              }
+              .client__descr {
+                line-height: 3.2rem;
+                color: $text-color_1;
+              }
+            }
+            .client__vissual {
+              display: flex;
+              align-items: center;
+              column-gap: 2.2rem;
+              @include bp($point_3) {
+                &.client__vissual--order {
+                  order: -1;
+                }
+              }
+
+              .client__img_w {
+                display: block;
+                object-fit: contain;
+                width: 8.4rem;
+                height: 8.3rem;
+                &.client__img_w.client__img_w--h {
+                  height: 8.2rem;
+                }
+                .client__img {
+                  @extend %contain_image;
+                  border-radius: 50%;
+                }
+              }
+              .client__name {
+                display: flex;
+                flex-direction: column;
+                .client__name_title {
+                  font-size: 3rem;
+                  line-height: 3.9rem;
+                  color: $white-color;
+                }
+                .client__name_subtitle {
+                  line-height: 3.2rem;
+                  color: $text-color_1;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

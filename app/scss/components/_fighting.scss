@@ -1,0 +1,159 @@
+.fighting {
+  padding-bottom: 0;
+}
+
+.fighting__in {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 8rem;
+  .fighting__coll {
+    &.fighting__coll--one {
+      display: flex;
+
+      @include bp($point_2, min) {
+        justify-content: center;
+        margin-bottom: 6rem;
+      }
+      @include bp($point_3) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+      .fighting__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 63.5rem;
+        .fighting__title {
+          max-width: 40rem;
+          font-size: 4.5rem;
+          line-height: 5.4rem;
+          color: $title-color_1;
+
+          @include bp($point_2, min) {
+            margin-bottom: 1rem;
+          }
+          @include bp($point_3) {
+            margin-bottom: 2rem;
+          }
+        }
+        .decor_2__img_w {
+          @include bp($point_2, min) {
+            margin-bottom: 4rem;
+          }
+          @include bp($point_3) {
+            margin-bottom: 2rem;
+          }
+        }
+        .fighting__descr {
+          line-height: 3.2rem;
+          color: $text-color_2;
+        }
+      }
+    }
+    &.fighting__coll--two {
+      display: flex;
+      justify-content: center;
+      .fighting__results {
+        display: flex;
+        @include bp($point_2, min) {
+          column-gap: 3rem;
+        }
+        @include bp($point_3) {
+          flex-direction: column;
+          row-gap: 2rem;
+        }
+        .fighting__item_w {
+          background-color: #fbfbfb;
+          @include bp($point_2, min){
+          min-width: 43rem;
+          }
+          @include bp($point_3){
+            min-width: 34rem;
+          }
+
+          .fighting__item {
+
+            padding: 3rem;
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+            @include bp($point_2, min){
+              align-items: center;
+            column-gap: 2rem;
+            }
+            @include bp($point_3){
+              flex-direction: column;
+              text-align: center;
+            }
+            .fighting__item_call {
+              &.fighting__item_call.fighting__item_call--box {
+                width: 12rem;
+                height: 12rem;
+                border: 2px solid $gold-color;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                @include bp($point_3){
+                  margin-bottom: 1rem;
+                }
+                .fighting__img_w {
+                  width: 2.2rem;
+                  height: 2rem;
+                  display: block;
+                  object-fit: contain;
+                  .fighting__img {
+                    @extend%contain_image;
+                  }
+                }
+                .fighting__number {
+                  font-size: 3rem;
+                  color: $text-color_3;
+                  line-height: 3.9rem;
+                }
+              }
+              &.fighting__item_call.fighting__item_call--text {
+                .fighting__item_title {
+                  font-size: 3rem;
+                  line-height: 4.2rem;
+                  color: $text-color_3;
+                }
+                .fighting__item_descr {
+                  line-height: 3.2rem;
+                  color: $text-color_2;
+                }
+              }
+            }
+          }
+
+          &.fighting__item_w.fighting__item_w--background {
+            background-image: url(../images/fight_back.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            .fighting__item {
+              padding: 4rem 5rem;
+              color: $white-color;
+              .fighting__item_call {
+                display: flex;
+                flex-direction: column;
+                .fighting__number {
+                  font-size: 3rem;
+                  line-height: 3.9rem;
+                  margin-bottom: 1rem;
+                }
+                .fighting__item_descr {
+                  line-height: 2.6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

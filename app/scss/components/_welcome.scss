@@ -1,0 +1,182 @@
+.welcome {
+  background-color: #161d27;
+  @include bp($point_3) {
+    padding: 5rem 0;
+  }
+}
+
+.welcome__in {
+  display: flex;
+  @include bp($point_3) {
+    flex-direction: column;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+}
+
+.welcome__coll {
+  &.welcome__coll.welcome__coll--one {
+    @include bp($point_2, min) {
+      width: 32%;
+    }
+    @include bp($point_3) {
+      width: 100%;
+    }
+  }
+  &.welcome__coll.welcome__coll--two {
+    @include bp($point_2, min) {
+      width: 58%;
+      margin-left: auto;
+    }
+    @include bp($point_3) {
+      width: 100%;
+    }
+  }
+}
+
+.welcome__img_w {
+  @include bp($point_2, min) {
+    width: 47rem;
+    height: 29.5rem;
+  }
+  display: block;
+  object-fit: contain;
+  @include bp($point_3) {
+    width: 100%;
+    height: 100%;
+  }
+  .welcome__img {
+    @extend %contain_image;
+  }
+}
+.welcome__img_w:first-child {
+  margin-bottom: 3rem;
+}
+
+.welcome__info {
+  display: flex;
+  flex-direction: column;
+  @include bp($point_3) {
+    align-items: center;
+    text-align: center;
+  }
+  .welcome__title {
+    max-width: 55rem;
+    font-family: Cormorant Garamond;
+    font-size: 4.5rem;
+    font-weight: 400;
+    line-height: 5.8rem;
+    letter-spacing: 0.4px;
+    color: $white-color;
+    @include bp($point_2, min) {
+      margin-bottom: 1rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 1.8rem;
+    }
+  }
+  .decor__img_w.decor__img_w--welcome {
+    @include bp($point_2, min) {
+      margin-bottom: 5.8rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 1.8rem;
+    }
+  }
+  .welcome__descr {
+    font-family: Outfit;
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3.2rem;
+    letter-spacing: 0.4px;
+    color: $text-color_1;
+    margin-bottom: 3.2rem;
+  }
+  .welcome__peter_w {
+    display: flex;
+    align-items: center;
+    column-gap: 2rem;
+    @include bp($point_2, min) {
+      margin-bottom: 4.5rem;
+    }
+    @include bp($point_3){
+      margin-bottom: 2.5rem;
+    }
+    .welcom__man_w {
+      display: block;
+      object-fit: contain;
+      width: 9rem;
+      height: 9rem;
+      .welcom__man {
+        @extend %contain_image;
+      }
+    }
+    .welcome__name {
+      font-family: Cormorant Garamond;
+      font-size: 4rem;
+      font-weight: 400;
+      line-height: 5.2rem;
+      letter-spacing: 0.4px;
+      color: $white-color;
+    }
+  }
+  .welcome__notess {
+    display: flex;
+    @include bp($point_2, min) {
+      align-items: center;
+      column-gap: 3rem;
+    }
+    @include bp($point_3) {
+      flex-direction: column;
+      row-gap: 2rem;
+    }
+    .welcome__note {
+      min-width: 31.5rem;
+      height: 12.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 2rem;
+      &.welcome__note.welcome__note--black {
+        background-color: #3b434e;
+      }
+      &.welcome__note.welcome__note--gold {
+        background-color: #d1b06b;
+      }
+      .note__img_w {
+        width: 5.8rem;
+        height: 5.6rem;
+        display: block;
+        object-fit: contain;
+        .note__img {
+          @extend %contain_image;
+        }
+      }
+      .welcome__note_descr {
+        font-family: Outfit;
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        letter-spacing: 0.4px;
+        color: $text-color_1;
+      }
+      .note__number_w {
+        width: 8rem;
+        height: 6rem;
+        border-radius: 5px;
+        background-color: $title-color_1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        .note__number {
+          font-family: Outfit;
+          font-size: 3rem;
+          font-weight: 400;
+          line-height: 3.9rem;
+          letter-spacing: 0.4px;
+          color: $white-color;
+        }
+      }
+    }
+  }
+}

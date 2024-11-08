@@ -1,0 +1,119 @@
+.photo {
+  background-color: $title-color_1;
+  .photo__in {
+    width: 100%;
+    display: flex;
+    .photo_list {
+      display: flex;
+      width: 100%;
+      @include bp($point_2, min) {
+        flex-wrap: wrap;
+        margin-right: -2rem;
+        row-gap: 10rem;
+      }
+      @include bp($point_3) {
+        flex-direction: column;
+        row-gap: 2rem;
+        align-items: center;
+      }
+      .photo__item {
+        display: flex;
+        flex-direction: column;
+        @include bp($point_2, min) {
+          width: calc(100% / 3);
+          padding-right: 2rem;
+        }
+        @include bp($point_3) {
+          width: 100%;
+        }
+        .photo__img_w {
+          display: block;
+          object-fit: contain;
+          margin-bottom: 2.4rem;
+          transition: all 0.5s ease-in-out;
+          @include bp($point_2, min) {
+            width: 44rem;
+            height: 36.7rem;
+          }
+          @include bp($point_3) {
+            width: 100%;
+            height: 100%;
+          }
+          &:hover {
+            box-shadow:
+              rgba(0, 0, 0, 0.25) 0px 54px 55px,
+              rgba(0, 0, 0, 0.12) 0px -12px 30px,
+              rgba(0, 0, 0, 0.12) 0px 4px 6px,
+              rgba(0, 0, 0, 0.17) 0px 12px 13px,
+              rgba(0, 0, 0, 0.09) 0px -3px 5px;
+          }
+
+          .photo__img {
+            @extend %contain_image;
+          }
+        }
+
+        .law__subs {
+          display: flex;
+          align-items: center;
+          column-gap: 2rem;
+          border-bottom: 1px solid #4e555f;
+          margin-bottom: 1.4rem;
+          @include bp($point_2, min) {
+            padding-bottom: 2.4rem;
+          }
+          @include bp($point_3) {
+            padding-bottom: 1.4rem;
+          }
+          .law__subtitle {
+            color: $gold-color;
+            @include bp($point_2, min) {
+              line-height: 3.3rem;
+            }
+            @include bp($point_3) {
+              font-size: 1.5rem;
+              line-height: 2.8rem;
+            }
+            &.law__subtitle.law__subtitle--border {
+              border-left: 2px solid $gold-color;
+              padding-left: 2rem;
+              line-height: 3.3rem;
+            }
+          }
+        }
+        .photo__title {
+          color: $white-color;
+
+          @include bp($point_2, min) {
+            font-size: 3rem;
+            line-height: 3.8rem;
+            margin-bottom: 2rem;
+          }
+          @include bp($point_3) {
+            font-size: 3.3rem;
+            line-height: 4.2rem;
+            margin-bottom: 1rem;
+          }
+        }
+        .photo__descr {
+          line-height: 3.2rem;
+          color: $text-color_1;
+          margin-bottom: 2rem;
+        }
+        .photo__link {
+          font-size: 2.2rem;
+          line-height: 3.5rem;
+          color: $gold-color;
+          text-decoration: none;
+          border-bottom: 1px solid $gold-color;
+          max-width: 11rem;
+          transition: all 0.5s ease-in-out;
+          cursor: pointer;
+          &:hover {
+            transform: scale(1.2, 1.2);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,87 @@
+@mixin st_btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  white-space: nowrap;
+
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+%gold_btn {
+  @include st_btn;
+  background-color: $gold-color;
+  color: $text-color_3;
+  padding: 0 7rem;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: $white-color;
+    color: $black-color;
+  }
+}
+%gold_btn__size {
+  max-width: 27rem;
+  height: 8.5rem;
+  
+}
+
+%black_btn {
+  @include st_btn;
+  background-color:  #FFFFFF1A;
+  ;
+  color: $white-color;
+  padding: 0 7rem;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: $gold-color;
+    color: $black-color;
+  }
+}
+%black_btn__size {
+  min-width: 302px;
+  height: 85px;
+}
+%white_btn {
+  @include st_btn;
+  background-color: $white-color;
+  color: #3b434e;
+  padding: 0 4rem;
+  font-weight: 400;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: $border-color;
+    color: $white-color;
+  }
+}
+%opp_btn {
+  @include st_btn;
+  background-color: $title-color_1;
+  color: $white-color;
+  padding: 0 4rem;
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    background-color: $white-color;
+    color: $black-color;
+  }
+}
+%opp_btn__size {
+  min-width: 18.7rem;
+  height: 5.8rem;
+}
+
+%btn_font_1 {
+  line-height: 8.5rem;
+  font-family: Outfit;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+%btn_font_2 {
+line-height: 3.2rem;
+}

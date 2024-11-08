@@ -1,0 +1,181 @@
+.blogs {
+  background-color: $title-color_1;
+  padding-bottom: 0;
+}
+
+.blogs__in {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid $border-color;
+  @include bp($point_2, min) {
+    padding-bottom: 10rem;
+  }
+  @include bp($point_3) {
+    align-items: center;
+    padding-bottom: 5rem;
+  }
+
+  .blogs__title {
+    font-size: 4.5rem;
+    line-height: 5.4rem;
+    color: $white-color;
+    margin-bottom: 1rem;
+    @include bp($point_2, min) {
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
+  }
+  .decor_2__img_w {
+    @include bp($point_2, min) {
+      margin: 0 auto;
+      margin-bottom: 7rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 3rem;
+    }
+  }
+  .blogs_columns {
+    display: flex;
+
+    @include bp($point_2, min) {
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include bp($point_3) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2.4rem;
+    }
+    .blogs__coll {
+      &.blogs__coll.blogs__coll--one {
+        position: relative;
+        @include bp($point_2, min) {
+          max-width: 65.5rem;
+        }
+        @include bp($point_3) {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+        }
+        .video {
+          @include bp($point_2, min) {
+            width: 65.5rem;
+            height: 54.6rem;
+          }
+          @include bp($point_3) {
+            width: 100%;
+            height: 26.6rem;
+            
+          }
+        }
+        .blogs__img_w {
+        
+           
+          display: block;
+          object-fit: contain;
+          box-shadow: 10px 5px 87px $gold-color;
+          @include bp($point_2, min) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 65.5rem;
+            height: 54.6rem;
+            
+          }
+          @include bp($point_3) {
+            display: none
+          }
+          .blogs__img {
+            @extend%contain_image;
+          }
+          .blogs__play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 10rem;
+            height: 10rem;
+            cursor: pointer;
+          }
+        }
+      }
+      &.blogs__coll.blogs__coll--two {
+        @include bp($point_2, min) {
+          max-width: 65.5rem;
+        }
+        @include bp($point_3) {
+          width: 100%;
+          // text-align: center;
+        }
+        .law__info {
+          display: flex;
+          flex-direction: column;
+          @include bp($point_3) {
+            // align-items: center;
+          }
+          .law__subs {
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+            border-bottom: 1px solid #4e555f;
+            margin-bottom: 1.4rem;
+            @include bp($point_2, min) {
+              padding-bottom: 2.4rem;
+            }
+            @include bp($point_3) {
+              padding-bottom: 1.4rem;
+            }
+            .law__subtitle {
+              line-height: 3.3rem;
+              color: $gold-color;
+              @include bp($point_2, min) {
+                line-height: 3.3rem;
+              }
+              @include bp($point_3) {
+                font-size: 1.5rem;
+                line-height: 2.8rem;
+              }
+              &.law__subtitle.law__subtitle--border {
+                border-left: 2px solid $gold-color;
+                padding-left: 2rem;
+                line-height: 3.3rem;
+              }
+            }
+          }
+          .law__title {
+            font-size: 4.5rem;
+            line-height: 5.8rem;
+            color: $white-color;
+            @include bp($point_2, min) {
+              font-size: 3rem;
+              line-height: 5.8rem;
+              margin-bottom: 2rem;
+            }
+            @include bp($point_3) {
+              font-size: 3.3rem;
+              line-height: 4.2rem;
+              margin-bottom: 1rem;
+            }
+          }
+          .law__descr {
+            line-height: 3.2rem;
+            color: $text-color_1;
+            margin-bottom: 2rem;
+          }
+          .law__link {
+            font-size: 2.2rem;
+            line-height: 3.5rem;
+            color: $gold-color;
+            text-decoration: none;
+            border-bottom: 1px solid $gold-color;
+            max-width: 11rem;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              transform: scale(1.2, 1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+}

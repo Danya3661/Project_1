@@ -1,0 +1,113 @@
+.hero {
+  // min-height: 102rem;
+  @include bp($point_2, min){
+  padding: 26rem 0 0;
+  }
+  @include bp($point_3){
+    padding: 42rem 0 0;
+  }
+  
+
+  background: #1f2732cf;
+  position: relative;
+  // height: 100vh;
+}
+.hero__back_w {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  .hero__back {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.hero__in {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  @include bp($point_3) {
+    flex-direction: column;
+  }
+}
+.hero__coll {
+  @include bp($point_2, min){
+  width: 50%;
+  }
+  &.hero__coll.hero__coll--info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include bp($point_3) {
+      align-self: center;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+.hero_info {
+  display: flex;
+  flex-direction: column;
+  @include bp($point_2, min) {
+    max-width: 67rem;
+  }
+  @include bp($point_3) {
+    width: 100%;
+  }
+  //   margin-top: auto;
+  .decor__img_w {
+    margin-bottom: 1.4rem;
+  }
+  .hero__title {
+    font-family: Cormorant Garamond;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    color: $white-color;
+    margin-bottom: 2rem;
+    @include bp($point_2, min) {
+      font-size: 6.5rem;
+      line-height: 7.8rem;
+    }
+    @include bp($point_3) {
+      font-size: 5rem;
+    }
+  }
+  .hero__descr {
+    font-family: Outfit;
+    font-size: 2.2rem;
+    font-weight: 400;
+    line-height: 4rem;
+    letter-spacing: 0.4px;
+    color: $gold-color;
+    margin-bottom: 2.8rem;
+  }
+  .hero__btn {
+    @extend%gold_btn;
+    @extend%gold_btn__size;
+    @extend%btn_font_1;
+    @include bp($point_3) {
+      margin: 0 auto;
+    }
+  }
+}
+.hero__img_w {
+  @include bp($point_2, min){
+  width: 67.2rem;
+  height: 70.8rem;
+  }
+  display: block;
+  object-fit: contain;
+  margin-top: 5.2rem;
+  @include bp($point_3){
+    width: 37.2rem;
+  height: 38.8rem;
+  }
+}
+.hero__img {
+  @extend %contain_image;
+}

@@ -1,0 +1,122 @@
+.people__in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  .people__title {
+    max-width: 69rem;
+
+    @include bp($point_2, min) {
+      font-size: 4.5rem;
+      line-height: 5.4rem;
+      margin-bottom: 1rem;
+    }
+    @include bp($point_3) {
+      font-size: 4.5rem;
+      line-height: 5.4rem;
+      margin-bottom: 2rem;
+    }
+  }
+  .decor_2__img_w {
+    margin-bottom: 7rem;
+    @include bp($point_2, min) {
+      margin-bottom: 7rem;
+    }
+    @include bp($point_3) {
+      margin-bottom: 3rem;
+    }
+  }
+  .people__list {
+    display: flex;
+    @include bp($point_2, min) {
+      align-items: center;
+      column-gap: 3rem;
+    }
+    @include bp($point_3) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 2rem;
+    }
+    .people__item {
+      .people__img_w {
+        position: relative;
+        display: block;
+
+        object-fit: contain;
+        @include bp($point_2, min) {
+          width: 43rem;
+          height: 57rem;
+          margin-bottom: 2rem;
+        }
+        @include bp($point_3){
+          width: 100%;
+          height: 100%;
+          margin-bottom: 1rem;
+        }
+        cursor: pointer;
+        &:hover {
+          .people__socials_w {
+            background-color: $white-color;
+            border-bottom: 1px solid $gold-color;
+            .sprite__socials {
+              display: flex;
+            }
+          }
+        }
+        .people__img {
+          @extend %contain_image;
+        }
+        .people__socials_w {
+          position: absolute;
+          bottom: 0;
+          transition: all 0.3s ease-in-out;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 21.7rem;
+          height: 6.6rem;
+
+          padding: 2rem 3.6rem;
+          @include bp($point_2, min){
+            left: 10.8rem;
+          }
+          @include bp($point_3){
+            left: 6rem;
+          }
+
+          .sprite__socials {
+            display: flex;
+            align-items: center;
+            column-gap: 2rem;
+            display: none;
+
+            .social__link {
+              display: block;
+              color: $text-color_3;
+              width: 2rem;
+              height: 2rem;
+              transition: all 0.5s ease-in-out;
+              &:hover {
+                color: $gold-color;
+                transform: scale(1.2, 1.2);
+              }
+              .icon {
+                @extend %contain_image;
+              }
+            }
+          }
+        }
+      }
+
+      .people__name {
+        font-size: 3rem;
+        line-height: 3.9rem;
+        color: $title-color_1;
+      }
+      .people__name_descr {
+        line-height: 3.2rem;
+        color: $gold-color;
+      }
+    }
+  }
+}

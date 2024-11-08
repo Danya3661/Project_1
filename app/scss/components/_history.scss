@@ -1,0 +1,152 @@
+.history {
+  background-image: url(../images/history_back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include bp($point_3){
+    padding: 0;
+  }
+  .history__in {
+    display: flex;
+    background-color: #1f2732d9;
+    @include bp($point_2, min) {
+      justify-content: space-between;
+      padding: 7.5rem 6rem;
+    }
+    @include bp($point_3) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding-top: 2rem ;
+      padding-bottom: 3rem;
+    }
+    .history__coll {
+      display: flex;
+      flex-direction: column;
+      color: $white-color;
+      @include bp($point_3){
+        width: 100%;
+      }
+      .history__title {
+        font-size: 4.5rem;
+        line-height: 5.8rem;
+        margin-bottom: 1rem;
+      }
+      .decor__img_w {
+        @include bp($point_2, min) {
+          margin-bottom: 5rem;
+        }
+        @include bp($point_3){
+          margin: 0 auto;
+          margin-bottom: 1rem;
+        }
+      }
+      .history__subtitle {
+        line-height: 2.6rem;
+        color: $gold-color;
+        margin-bottom: 1.3rem;
+      }
+      .history__descr {
+        line-height: 3.2rem;
+        color: $text-color_1;
+        margin-bottom: 3.4rem;
+      }
+
+      &.history__coll.history__coll--one {
+        max-width: 42rem;
+      }
+      &.history__coll.history__coll--two {
+        max-width: 26rem;
+        .history__img_w {
+          display: block;
+          object-fit: cover;
+          width: 26rem;
+          height: 90rem;
+
+          .history__img {
+            @extend %cover_image;
+          }
+        }
+      }
+      &.history__coll.history__coll--three {
+        @include bp($point_2, min){
+        max-width: 38rem;
+        }
+        @include bp($point_3){
+          width: 100%;
+        }
+        .history__descr {
+          line-height: 3.2rem;
+          color: $text-color_1;
+          margin-bottom: 3.4rem;
+        }
+        .skills_part {
+          width: 100%;
+
+          .skill__box {
+            width: 100%;
+            .skill__info {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin-bottom: 1rem;
+              .skill__name {
+                display: block;
+                line-height: 3.2rem;
+                color: $white-color;
+              }
+              .tooltip {
+                line-height: 3.2rem;
+                color: $white-color;
+              }
+            }
+            .skill__bar {
+              width: 100%;
+              height: 0.5rem;
+              background-color: $white-color;
+              border-radius: 0.6rem;
+              margin-bottom: 4rem;
+              .skill__per {
+                position: relative;
+                display: block;
+                height: 100%;
+                width: 75%;
+                background-color: $gold-color;
+                border-radius: 0.6rem;
+                box-shadow: 10px 5px 87px $gold-color;
+
+                animation: progress 11s ease-in-out infinite;
+                &.skill__per.skill__per--w2 {
+                  width: 80%;
+                  animation: progress 11.4s ease-in-out infinite;
+                }
+                &.skill__per.skill__per--w3 {
+                  width: 90%;
+                  animation: progress 11.9s ease-in-out infinite;
+                }
+                @keyframes progress {
+                  0% {
+                    width: 0;
+                    opacity: 1;
+                  }
+                  100% {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .history__btn {
+          @extend %gold_btn;
+          @extend %gold_btn__size;
+          @extend %btn_font_1;
+          margin-top: 1rem;
+          @include bp($point_3){
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}

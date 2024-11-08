@@ -1,0 +1,196 @@
+.burger__menu {
+  @include bp($point_2, min) {
+    display: none;
+  }
+  @include bp($point_3) {
+    background-image: url(../images/burger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 5rem;
+    height: 5rem;
+    z-index: 999;
+    position: absolute;
+    top: 0.6rem;
+    right: 1rem;
+  }
+}
+
+.header {
+  height: 25.5rem;
+  width: 100%;
+  position: absolute;
+  top: 3rem;
+  left: 0;
+  z-index: 1;
+}
+.header__top {
+  display: flex;
+  @include bp($point_2, min) {
+    align-items: center;
+    margin-bottom: 4rem;
+  }
+  @include bp($point_3) {
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+}
+.header__logo_w {
+  @include bp($point_2, min) {
+    width: 40rem;
+    height: 8rem;
+  }
+  @include bp($point_3) {
+    width: 33rem;
+    height: 8rem;
+    margin-bottom: 1rem;
+  }
+  display: block;
+  object-fit: contain;
+}
+.header__logo {
+  @extend %contain_image;
+}
+.header__btn {
+  @extend %black_btn;
+  @extend %black_btn__size;
+  @extend %btn_font_1;
+  @include bp($point_2, min) {
+    margin-left: auto;
+  }
+}
+.header__nav {
+  display: flex;
+  border-top: 1px solid #4e555f;
+  border-bottom: 1px solid #4e555f;
+  padding: 2rem 0;
+  align-items: center;
+  .hlist {
+    @include bp($point_3) {
+      display: none;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 998;
+      top: 0;
+      left: 0;
+      width: 100dvw;
+      height: 100dvh;
+      background-color: $title-color_1;
+      transform: translateX(-100%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: all 0.3s ease-in-out;
+      overflow: auto;
+    }
+
+    &.hlist.active {
+      @include bp($point_3) {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+        opacity: 1;
+      }
+    }
+
+    .header__nav_list {
+      display: flex;
+      align-items: center;
+      @include bp($point_2, min) {
+        column-gap: 5rem;
+      }
+      @include bp($point_3) {
+        flex-direction: column;
+        row-gap: 2rem;
+      }
+
+      .header__nav_link {
+        font-family: Outfit;
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 3rem;
+        letter-spacing: 0.4px;
+        text-decoration: none;
+        color: $white-color;
+        transition: all 0.5s ease-in-out;
+
+        &:hover {
+          color: $gold-color;
+        }
+      }
+    }
+  }
+}
+.header__cont_list {
+  display: flex;
+  @include bp($point_2, min) {
+    align-items: center;
+    column-gap: 5rem;
+    margin-left: auto;
+  }
+  @include bp($point_3) {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .header__cont_item {
+    display: flex;
+    .cont__img_w {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 6rem;
+      height: 6rem;
+      object-fit: contain;
+      border: 2px solid $gold-color;
+      border-radius: 50%;
+      animation: pulsing 2s infinite;
+
+      @keyframes pulsing {
+        0% {
+          -webkit-transform: scale(-0.5, -0.5);
+          transform: scale(-0.5, -0.5);
+        }
+        50% {
+          -webkit-transform: scale(-1, -1);
+          transform: scale(-1, -1);
+        }
+        100% {
+          -webkit-transform: scale(-0.5, -0.5);
+          transform: scale(-0.5, -0.5);
+        }
+      }
+      .cont__img {
+        display: block;
+        width: 1.7rem;
+        height: 1.7rem;
+        object-fit: contain;
+      }
+    }
+    .cont__info {
+      display: flex;
+      flex-direction: column;
+      row-gap: 1px;
+      margin-left: 1.2rem;
+      .cont__title {
+        font-family: Outfit;
+        font-size: 1.8rem;
+        font-weight: 400;
+        line-height: 2.8rem;
+        letter-spacing: 0.4px;
+        color: $gold-color;
+      }
+      .cont__subtitle {
+        font-family: Outfit;
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 2.6rem;
+        letter-spacing: 0.4px;
+        color: $white-color;
+        text-decoration: none;
+      }
+    }
+  }
+}

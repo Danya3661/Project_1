@@ -1,0 +1,143 @@
+.consultation {
+  background-color: $title-color_1;
+  .consultation__in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include bp($point_2, min) {
+      align-items: center;
+      justify-content: space-between;
+    }
+    @include bp($point_3) {
+      flex-direction: column;
+      align-items: center;
+      row-gap: 3rem;
+    }
+    .consultation__coll {
+      &.consultation__coll.consultation__coll--one {
+        @include bp($point_2, min) {
+          max-width: 63rem;
+        }
+        @include bp($point_3) {
+          width: 100%;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .consultation__title {
+          font-size: 4.5rem;
+          line-height: 5.8rem;
+          color: $white-color;
+          max-width: 57.7rem;
+          @include bp($point_2, min) {
+            margin-bottom: 1rem;
+          }
+          @include bp($point_3) {
+            margin-bottom: 2rem;
+          }
+        }
+        .decor__img_w {
+          @include bp($point_2, min) {
+            margin-bottom: 4.3rem;
+          }
+          @include bp($point_3){
+            margin-bottom: 2rem;
+          }
+        }
+        .consultation__descr {
+          line-height: 3.2rem;
+          color: $text-color_1;
+          margin-bottom: 3.7rem;
+        }
+        .consultation__btn {
+          @extend %gold_btn;
+          @extend %gold_btn__size;
+          @extend %btn_font_1;
+        }
+      }
+      &.consultation__coll.consultation__coll--two {
+        background-color: $white-color;
+        @include bp($point_2, min){
+          max-width: 63rem;
+          padding: 4rem;
+        }
+        @include bp($point_3){
+          width: 100%;
+          padding: 1rem;
+        }
+        .free__item {
+          border: 15px solid #d7d7d7;
+          @include bp($point_2, min){
+            padding: 6.5rem 5rem;
+          }
+          @include bp($point_3){
+            padding: 3.5rem 2.5rem;
+          }
+          .free__info {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 3.7rem;
+            @include bp($point_3){
+              text-align: center;
+            }
+            .free__title {
+              font-size: 4.2rem;
+              line-height: 5.4rem;
+              color: $text-color_3;
+              margin-bottom: 1rem;
+            }
+            .free__descr {
+              line-height: 3.2rem;
+              color: $text-color_2;
+            }
+          }
+          .free__cont {
+            display: flex;
+            @include bp($point_2, min){
+              align-items: center;
+              column-gap: 1.5rem;
+            }
+            @include bp($point_3){
+              flex-direction: column;
+              align-items: center;
+              text-align: center;
+            }
+            .free__img_w {
+              width: 7rem;
+              height: 7rem;
+              display: block;
+              object-fit: contain;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              background-color: $gold-color;
+              @include bp($point_3){
+                margin-bottom: 1rem;
+              }
+              .free__img {
+                width: 2.7rem;
+                height: 2.7rem;
+                display: block;
+                object-fit: contain;
+              }
+            }
+            .free__cont_descr {
+              display: flex;
+              flex-direction: column;
+              color: $text-color_3;
+              .free__cont_title {
+                font-size: 1.8rem;
+                line-height: 2.1rem;
+              }
+              .free__cont_number {
+                font-size: 3rem;
+                line-height: 4.2rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,80 @@
+:root {
+  font-size: 10px;
+  // font-size: calc(100vw - 1920 *10);
+}
+
+html,
+body {
+  height: 100%;
+  scroll-behavior: smooth;
+ 
+}
+body:has(.hlist.active){
+  overflow: hidden;
+}
+body{
+  font-family: "Outfit",sans-serif;
+  letter-spacing: 0.4px;
+  font-weight: 400;
+  font-size: 2rem;
+}
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.section {
+ 
+  overflow: hidden;
+  width: 100%;
+  @include bp($point_2, min){
+    padding: 10rem 0;
+  }
+  @include bp($point_3){
+    padding: 5rem 0;
+  }
+}
+.container {
+  padding: 0 2rem;
+  max-width: 142rem;
+  width: 100%;
+  margin: 0 auto;
+}
+.main {
+  flex-grow: 1;
+}
+.title{
+  font-family: "Cormorant Garamond",sans-serif;
+}
+.decor__img_w {
+  display: block;
+  width: 9.5rem;
+  height: 4.4rem;
+  object-fit: contain;
+ 
+  .decor__img {
+    @extend %contain_image;
+  }
+}
+.decor_2__img_w {
+  width: 9.5rem;
+  height: 4.4rem;
+  display: block;
+  object-fit: contain;
+  
+  .decor_2__img {
+    @extend %contain_image;
+  }
+}
+.decor_3__img_w {
+  width: 9.5rem;
+  height: 8rem;
+  display: block;
+  object-fit: contain;
+  .decor_3__img {
+    @extend %contain_image;
+  }
+}
